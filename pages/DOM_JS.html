@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Паспорт</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .passport-container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ccc;
+      position: relative;
+    }
+
+    .passport-section {
+      margin-bottom: 20px;
+    }
+
+    .passport-section h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .passport-section p {
+      margin: 5px 0;
+      font-size: 18px;
+    }
+
+    .passport-photo {
+      float: right;
+      width: 150px;
+      height: 200px;
+      background-color: #ddd;
+      margin-left: 20px;
+      text-align: center;
+      line-height: 200px;
+      color: #888;
+    }
+
+    .clear {
+      clear: both;
+    }
+
+    .translate-button {
+      display: block;
+      margin: 0 auto 20px;
+      padding: 12px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .translate-button:hover {
+      background-color: #45a049;
+    }
+
+    .latin-text {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header_container container">
+      <a href="../index.html" class="header_logo">
+        <img class="logo_item" src="../img/logo/Logo.svg" alt="logo">
+      </a>
+      <nav class="header_menu">
+        <ul class="menu_list">
+          <li class="menu_item"><a class="menu_link" href="./features.html" target="_self">Features</a></li>
+          <li class="menu_item"><a class="menu_link activeNavElem" href="./DOM_JS.html" target="_self">Паспорт DOM_JS</a></li>
+          <li class="menu_item"><a class="menu_link" href="./form.html" target="_self">Форма</a></li>
+          <li class="menu_item"><a class="menu_link" href="./task.html" target="_self">Задача</a></li>
+          <li class="menu_item"><a class="menu_link" href="./table.html" target="_self">Таблица</a></li>
+          <li class="menu_item"><a class="menu_link" href="http://www.hse.ru" target="_blank">Ссылка на внешний сайт</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header_btn">
+        <a href="#" class="header_btn-item">Login</a>
+      </div>
+      <a href=""></a>
+    </div>
+
+    <div class="passport-container">
+      <img src="" alt="Паспорт РФ">
+
+      <img id="photo" src="" alt="Фото Даниила" title="Это фотография Даниила">
+
+      <div class="text" id="issued">MOSCOW CITY GU MVD</div>
+      <div class="text" id="surname">Avstryskii</div>
+      <div class="text" id="name">Vladimir</div>
+      <div class="text" id="father">Alexandrovich</div>
+      <div class="text" id="gender">Male</div>
+      <div class="text" id="birthplace">Moscow</div>
+    </div>
+
+    <button class="translate-button" id="translateBtn">Перевести на латиницу</button>
+
+    <div class="passport-container">
+      <div class="passport-section">
+        <h2>Страница 2</h2>
+        <div class="passport-photo">Фото</div>
+        <p><strong>Серия и номер:</strong> <span>1234 567890</span></p>
+        <p><strong>Фамилия:</strong> <span class="cyrillic" id="surname">Австрийский</span><span class="latin-text"
+            id="surnameLatin">Avstryskii</span></p>
+        <p><strong>Имя:</strong> <span class="cyrillic" id="name">Владимир</span><span class="latin-text"
+            id="nameLatin">Vladimir</span></p>
+        <p><strong>Отчество:</strong> <span class="cyrillic" id="patronymic">Александрович</span><span class="latin-text"
+            id="patronymicLatin">Alexandrovich</span></p>
+        <div class="clear"></div>
+      </div>
+
+      <div class="passport-section">
+        <h2>Страница 3</h2>
+        <p><strong>Дата рождения:</strong> <span class="cyrillic" id="birthDate">15 января 1990 года</span><span
+            class="latin-text" id="birthDateLatin">15 January 1990</span></p>
+        <p><strong>Место рождения:</strong> <span class="cyrillic" id="birthPlace">г. Москва</span><span
+            class="latin-text" id="birthPlaceLatin">Moscow</span></p>
+      </div>
+    </div>
+  </header>
+  <script>
+    document.getElementById('translateBtn').addEventListener('click', function () {
+      var cyrillicElements = document.getElementsByClassName('cyrillic');
+      var latinElements = document.getElementsByClassName('latin-text');
+
+      for (var i = 0; i < cyrillicElements.length; i++) {
+        cyrillicElements[i].style.display = 'none';
+      }
+
+      for (var i = 0; i < latinElements.length; i++) {
+        latinElements[i].style.display = 'block';
+      }
+    });
+  </script>
+
+</body>
+
+</html>
+
